@@ -74,7 +74,7 @@ class UserBase(dict):
         '''Helper function to display the clusters and their amounts in a userbase, uses graph traversals
         :return: None'''
         checked = []
-        print 'Clusters in graph:'
+        print 'Clusters in graph: *Cluster Amount* nodes:  [ *userID*(*version*)...]'
         for i in self.keys():
             if i in checked:
                 continue
@@ -261,7 +261,6 @@ class UserBase(dict):
         '''function to dynamically deterimne if given a set of elements, any of them can be taken to sum up to exactly 'n'
         :return: True/False (if some elements can be summed to n or not)'''
 
-
         #Dynamic programming for coin change problem with limited supply of coins (elements in this case)
         m = len(elements)
         C = [False for x in range(n+1)]
@@ -272,28 +271,19 @@ class UserBase(dict):
             table[0][i] = 1
 
         B = [0 for x in range(n+1)] #Backtrace vector so we can find solution afterwards
+
         for i in range(1, n+1):
             for j in range(m):
-                #if we already know we can sum the amount i, then C[i] will be true, and we don't do anything
-                if C[i]:
-                    if (i-elements[j]<0):
-                        table[i][j] = 1
-                    else:
-                        table[i][j] = table[i-elements[j]][j]
-                    continue
-
                 #If including the jth element can get a sum of i, then C[i] is True and we can add the jth element to the backtrace
                 if (i-elements[j]>=0) and table[i-elements[j]][j]>0 and C[i-elements[j]]:
-                    B[i]=j
+                    if not C[i]:
+                        B[i]=j
                     C[i] = True
-                    table[i][j] = table[i-elements[j]][j]-1
-
-                elif (i-elements[j]<0):
-                    table[i][j] = 1
+                    table[i][j] = 0
 
                 #If including the jth element does not sum to i, C[i] remains false
                 else:
-                    table[i][j] = table[i-elements[j]][j]
+                    table[i][j] = 1
 
         #The final if amount 'n' can be summed from our elements will be in C[n]
         if C[n]:
