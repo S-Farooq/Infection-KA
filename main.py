@@ -151,7 +151,6 @@ def test(clusters,id,l):
     ub.display_userbase()
 
 if __name__ == '__main__':
-    test2()
     if len(sys.argv)!=2:
         print 'Please input ONLY one arguments out of: \'custom_test\', \'test1\', \'test2\', \'random\''
     else:

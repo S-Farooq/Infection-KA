@@ -276,8 +276,11 @@ class UserBase(dict):
             for j in range(m):
                 #If including the jth element can get a sum of i, then C[i] is True and we can add the jth element to the backtrace
                 if (i-elements[j]>=0) and table[i-elements[j]][j]>0 and C[i-elements[j]]:
-                    #if not C[i]:
-                    B[i]=j
+                    if C[i]:
+                        if elements[B[i]]<=elements[j]:
+                            B[i]=j
+                    else:
+                        B[i]=j
                     C[i] = True
                     table[i][j] = 0
 
