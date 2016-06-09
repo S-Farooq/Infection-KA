@@ -5,10 +5,9 @@ Infection Algorithms for Khan Academy Interview
 * Python 2.7
 
 <h1>Modelling</h1>
-User holds attributes like id and version as well as connections to other user instances defining teacher-student relations.
-UserBase is a dictionary of User instances.
+`User` holds attributes like `id` (in this case, these are `int`s) and `version` (in this case, `default_version='A'` and `new_version='Z'` for the test cases) as well as connections to other `User` instances defining teacher-student relations. `UserBase` is a dictionary of `User` instances.
 
-Together, Users and UserBase generalize to a collection of graphs (clusters).
+Together, `Users` and `UserBase` generalize to a collection of graphs (clusters).
 
 <h1>Instructions</h1>
 <p> `main.py` runs the total_infection, limited_infection, and the 'exact' variation of limited_infection algorithms on pre-made test cases or custom test cases. 
