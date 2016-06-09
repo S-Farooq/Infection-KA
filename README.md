@@ -5,7 +5,7 @@ Infection Algorithms for Khan Academy Interview
 * Python 2.7
 
 <h1>Modelling</h1>
-`User` holds attributes like `id` (in this case, these are `int`s) and `version` (in this case, `default_version='A'` and `new_version='Z'` for the test cases) as well as connections to other `User` instances defining teacher-student relations. `UserBase` is a dictionary of `User` instances.
+`User` holds attributes like `id` (in this case, these are `int`) and `version` (in this case, `default_version='A'` and `new_version='Z'` for the test cases) as well as connections to other `User` instances defining teacher-student relations. `UserBase` is a dictionary of `User` instances.
 
 Together, `Users` and `UserBase` generalize to a collection of graphs (clusters).
 
