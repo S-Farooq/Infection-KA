@@ -87,12 +87,12 @@ def test2():
     ub.reset()
 
 
-    for l in [7,13,17]:
-        raw_input('press any key')
-        print '\n----Exact limited Inflection with limit = ' + str(l)
-        ub.limited_infection_exact(new_version,l) #cannot find exact solution (odd #)
-        #ub.display_userbase()
-        ub.reset()
+    # for l in [7,13,17]:
+    #     raw_input('press any key')
+    #     print '\n----Exact limited Inflection with limit = ' + str(l)
+    #     ub.limited_infection_exact(new_version,l) #cannot find exact solution (odd #)
+    #     #ub.display_userbase()
+    #     ub.reset()
 
     raw_input('press any key')
     print '\n----Exact limited Inflection with limit =14'
@@ -151,6 +151,7 @@ def test(clusters,id,l):
     ub.display_userbase()
 
 if __name__ == '__main__':
+    test2()
     if len(sys.argv)!=2:
         print 'Please input ONLY one arguments out of: \'custom_test\', \'test1\', \'test2\', \'random\''
     else:

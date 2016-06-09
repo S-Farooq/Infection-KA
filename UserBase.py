@@ -168,7 +168,7 @@ class UserBase(dict):
 
     def infect_count(self, user, new_version, to_infect,checked):
         '''counts the potentially infectable users in the cluster specified by the given user id
-            Note: does not just count the # of users in a cluster but actually those who are on anotehr version than the one specified'''
+            Note: does not just count the # of users in a cluster but actually those who are on another version than the one specified'''
 
         #basically the infect_all function but instead of blindly infecting users, it only counts how many can potentially be infected
         #1. Start with a user, add to counter if NOT infected yet and add it into an 'to_infect' list
@@ -276,8 +276,8 @@ class UserBase(dict):
             for j in range(m):
                 #If including the jth element can get a sum of i, then C[i] is True and we can add the jth element to the backtrace
                 if (i-elements[j]>=0) and table[i-elements[j]][j]>0 and C[i-elements[j]]:
-                    if not C[i]:
-                        B[i]=j
+                    #if not C[i]:
+                    B[i]=j
                     C[i] = True
                     table[i][j] = 0
 
