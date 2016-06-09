@@ -10,7 +10,7 @@ Together, Users and UserBase generalize to a collection of graphs (clusters).
 <h1>Instructions</h1>
 <p> `main.py` runs the total_infection, limited_infection, and the 'exact' variation of limited_infection algorithms on pre-made test cases or custom test cases. 
 
-<h4>`main.p` takes in a single argument (from system/command line):</h4>
+**`main.py` takes in a single argument (from system/command line):**
 
 * `test1`: Runs algorithms on a pre-made 8 cluster UserBase<br>
 * `test2`: Runs algorithms on a pre-made 5 cluster UserBase<br>
