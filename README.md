@@ -1,6 +1,9 @@
 # Infection-KA
 Infection Algorithms for Khan Academy Interview
 
+**Requires:**
+* Python 2.7
+
 <h1>Modelling</h1>
 User holds attributes like id and version as well as connections to other user instances defining teacher-student relations.
 UserBase is a dictionary of User instances.
